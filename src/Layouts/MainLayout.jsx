@@ -9,7 +9,7 @@ const MainLayout = () => {
             <header className="max-w-[1400px] mx-auto">
                 <Navbar></Navbar>
             </header>
-            <main className="min-h-screen mx-auto">
+            <main className="min-h-screen mx-auto space-y-20">
                 <Outlet />
             </main>
             <ToastContainer></ToastContainer>
