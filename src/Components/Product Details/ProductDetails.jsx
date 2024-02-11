@@ -1,3 +1,7 @@
+// --------------------------- //
+// --Imported Files & Hooks -- //
+// --------------------------- //
+
 import { LuDollarSign } from "react-icons/lu";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IoColorPaletteOutline } from "react-icons/io5";
@@ -66,13 +70,17 @@ const ProductDetails = () => {
 
                 console.log(result.text);
 
+                orderForm.reset();
+
+                modal.close();
+
             }, (error) => {
 
                 console.log(error.text);
 
             });
 
-            orderForm.reset();
+            
 
     }
 
@@ -104,30 +112,6 @@ const ProductDetails = () => {
                                 <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#F5C332]" checked />
                             </div>
                             <div>(257 Reviews)</div>
-                        </div>
-                        <div className="flex items-center gap-3 font-bold xl:text-lg flex-wrap">
-                            <IoColorPaletteOutline></IoColorPaletteOutline>
-                            <h1>COLORS :</h1>
-                            <form className="flex items-center gap-3 ">
-                                <div className="form-control">
-                                    <label className="label cursor-pointer gap-2">
-                                        <span className="label-text">BLACK</span>
-                                        <input type="radio" name="radio-10" className="radio checked:bg-[#F5C332]" checked />
-                                    </label>
-                                </div>
-                                <div className="form-control">
-                                    <label className="label cursor-pointer gap-2">
-                                        <span className="label-text">WHITE</span>
-                                        <input type="radio" name="radio-10" className="radio checked:bg-[#F5C332]" checked />
-                                    </label>
-                                </div>
-                                <div className="form-control">
-                                    <label className="label cursor-pointer gap-2">
-                                        <span className="label-text">BLACK & WHITE</span>
-                                        <input type="radio" name="radio-10" className="radio checked:bg-[#F5C332] " checked />
-                                    </label>
-                                </div>
-                            </form>
                         </div>
                         <div className="flex items-center gap-3 font-bold lg:text-lg">
                             <LuDollarSign></LuDollarSign>
