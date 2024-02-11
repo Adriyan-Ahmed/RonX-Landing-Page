@@ -1,3 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-mont {
+  font-family: "Montserrat", sans-serif;
+}
+
+
+.font-mono {
+  font-family: 'Monoton', sans-serif;
+}

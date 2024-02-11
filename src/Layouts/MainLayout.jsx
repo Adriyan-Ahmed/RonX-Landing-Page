@@ -6,10 +6,10 @@ import Navbar from "../Components/Navbar/Navbar";
 const MainLayout = () => {
     return (
         <>
-            <header className="max-w-[1400px] mx-auto">
+            <header className="max-w-[1400px] mx-auto font-mont">
                 <Navbar></Navbar>
             </header>
-            <main className="min-h-screen mx-auto space-y-20">
+            <main className="min-h-screen mx-auto space-y-20 font-mont">
                 <Outlet />
             </main>
             <ToastContainer></ToastContainer>
