@@ -17,7 +17,7 @@ const ProductDetails = () => {
 
 
 
-    
+
 
 
     const handleOrder = e => {
@@ -227,7 +227,7 @@ const ProductDetails = () => {
                                 </div>
                             </div>
                             <div className="flex items-center justify-between gap-8">
-                                <button className=" text-[12px] md:text-[14px] lg:text-[16px] font-semibold px-6 py-4 bg-[#F5C332] rounded-md flex items-center gap-3 text-black hover:py-3.5 hover:bg-transparent hover:border-[#F5C332] hover:border-2 hover:text-[#F5C332]  duration-300 " onClick={() => document.getElementById('my_modal_5').showModal()}> BUY NOW <AiOutlineShoppingCart className=" text-lg md:text-xl"></AiOutlineShoppingCart></button>
+                                <button className=" text-[12px] md:text-[14px] lg:text-[16px] font-semibold px-6 py-4 bg-[#F5C332] rounded-md flex items-center gap-3 text-black hover:py-3.5 hover:bg-transparent hover:border-[#F5C332] hover:border-2 hover:text-[#F5C332]  duration-300 " onClick={() => document.getElementById('my_modal_5').showModal()}> PLACE ORDER <AiOutlineShoppingCart className=" text-lg md:text-xl"></AiOutlineShoppingCart></button>
 
                                 <div className="modal-action mt-0">
                                     <form method="dialog">
