@@ -3,20 +3,24 @@
 // --------------------------- //
 
 import { FaArrowRight } from "react-icons/fa";
+import { useScrollContext } from "../../Contexts/ScrollProvider";
 
 const Banner = () => {
+    
+    const { scrollToContentHandler } = useScrollContext();
+
     return (
         <>
             <div className=" flex flex-col gap-6 md:gap-0 md:flex-row items-center justify-center relative overflow-hidden py-5 md:py-10 max-w-[1400px] mx-auto ">
                 <div className=" md:flex-1 relative">
                     <div className="xl:w-11/12 md:space-y-4 text-center md:text-left px-4 space-y-2 relative z-10">
                         <h2 className="text-xl md:text-[26px] xl:text-[30px]  font-semibold">FIND YOUR KIND</h2>
-                        <h1 className="text-[26px] md:text-[30px] xl:text-5xl font-bold">YOUR <span className=" ">STYLISH</span> HAVEN</h1>
+                        <h1 className="text-[26px] md:text-[30px] xl:text-5xl font-bold">YOUR <span className=" ">STYLISH</span> HEAVEN</h1>
                         <p className="text-[14px] xl:text-[16px] leading-6 lg:leading-8 font-medium">Explore seamless shopping on our multi-vendor platform with curated collections, exclusive deals, and effortless navigation. Discover unique </p>
                     </div>
                     <div className="mt-4 md:mt-4 px-4 flex items-center justify-center md:justify-normal gap-6 md:gap-5 lg:gap-8 relative z-10">
-                        <button className=" text-[12px] md:text-[14px] lg:text-[16px] font-semibold px-6 py-4 bg-[#F5C332] border-black border-2 rounded-md flex items-center gap-3 text-black hover:py-3.5 hover:bg-transparent duration-500 ">SHOP NOW <FaArrowRight></FaArrowRight></button>
-                        <button className=" text-[12px] md:text-[14px] lg:text-[16px] font-semibold px-6 py-3.5 border-2 border-black rounded-md flex items-center gap-3 hover:bg-[#F5C332] hover:text-black text-black duration-500  ">EXPLORE MORE</button>
+                        <button onClick={() => scrollToContentHandler('.product')} className=" text-[12px] md:text-[14px] lg:text-[16px] font-semibold px-6 py-4 bg-[#F5C332] rounded-md flex items-center gap-3 text-black hover:py-3.5 hover:bg-transparent hover:border-[#F5C332] hover:border-2 hover:text-[#F5C332]  duration-300 ">SHOP NOW <FaArrowRight></FaArrowRight></button>
+                        <button onClick={() => scrollToContentHandler('.about-us')} className=" text-[12px] md:text-[14px] lg:text-[16px] font-semibold px-6 py-3.5 border-2 border-[#F5C332] rounded-md flex items-center gap-3 hover:bg-[#F5C332] hover:text-black text-[#F5C332]  duration-500 ">EXPLORE MORE</button>
                     </div>
                     <div className=" hidden xl:grid grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-5 p-4 lg:p-6 border-[#F5C332] border-2 rounded-lg mt-5 xl:mt-14 mx-4 lg:mx-0 ">
                         <div className="bg-[#F5C332] p-2 rounded-2xl bg-opacity-60">

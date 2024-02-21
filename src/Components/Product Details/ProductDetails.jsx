@@ -6,7 +6,7 @@ import { LuDollarSign } from "react-icons/lu";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IoColorPaletteOutline } from "react-icons/io5";
 import Swal from "sweetalert2";
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 
@@ -18,6 +18,8 @@ const ProductDetails = () => {
     const form = useRef();
 
     const modal = document.getElementById('my_modal_5');
+
+    const [displayImage, setDisplayImage] = useState('https://i.ibb.co/GJ6brwX/20240111-153544.png?fbclid=IwAR3RdYI2F_4LRE_VOrEs60QFk8iOCaxG9vu7MpYjEElxGh_nPbQhU5NKIsU')
 
 
 
@@ -70,9 +72,9 @@ const ProductDetails = () => {
 
                 console.log(result.text);
 
-                orderForm.reset();
-
                 modal.close();
+
+                orderForm.reset();
 
             }, (error) => {
 
@@ -86,6 +88,17 @@ const ProductDetails = () => {
 
 
 
+
+    const images = [
+        'https://i.ibb.co/GJ6brwX/20240111-153544.png?fbclid=IwAR3RdYI2F_4LRE_VOrEs60QFk8iOCaxG9vu7MpYjEElxGh_nPbQhU5NKIsU',
+        'https://i.ibb.co/PjC22Dt/20240111-153808.png?fbclid=IwAR3xwrjV-APpxF8aYjod_Tw4Hfh_QhSQ0xtUHZIBqzOk4pHxOiJDZpN1WQU',
+        'https://i.ibb.co/bKC84rC/20240111-153126.png?fbclid=IwAR0Gvey84tthdsuzNwAFh18Ex0gpiobjaKWn5RFl0EmS2EW80z0mWKwpMQo',
+        'https://i.ibb.co/bKZ3ZSz/20240111-153444.png?fbclid=IwAR3o_4WErikCqg3ZN9SrdH0rRh2A4dt8ntrcTlghfo7QZsUKWBudrnQ6W0g',
+        'https://i.ibb.co/Jz5DPXm/20240111-153418.png?fbclid=IwAR23pSB7VbEkXt5yEz8wOIx8JKyqDX7NpCq6clke-hoJwBSVqo-XbhCZrrg',
+
+    ]
+
+
     return (
         <>
             <div className="mb-8">
@@ -93,9 +106,14 @@ const ProductDetails = () => {
                     <h1 className="text-center text-xl md:text-2xl lg:text-3xl font-bold mb-12">PRODUCT DETAILS</h1>
                 </div>
                 <div className="flex flex-col lg:flex-row items-center justify-center md:justify-normal gap-5">
-                    <div className="flex-1">
+                    <div className="flex-1 space-y-4 md:space-y-2 lg:space-y-8">
                         <div>
-                            <img className="w-full rounded-lg max-h-[570px] " src="https://i.ibb.co/GJ6brwX/20240111-153544.png?fbclid=IwAR3RdYI2F_4LRE_VOrEs60QFk8iOCaxG9vu7MpYjEElxGh_nPbQhU5NKIsU" alt="Product Image" />
+                            <img className="w-full rounded-lg max-h-[570px] " src={displayImage} alt="Product Image" />
+                        </div>
+                        <div className="flex items-center justify-between">
+                            {
+                                images.map((image, i) => <button className={displayImage === image && 'border-[#F5C332] border-4 rounded-md'} onClick={() => setDisplayImage(image)} key={i}><img className="w-16 rounded" src={image} alt="Product Image" /></button> )
+                            }
                         </div>
                     </div>
                     <div className="flex-1 space-y-4 md:space-y-2 lg:space-y-8 w-full">
